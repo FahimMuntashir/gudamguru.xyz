@@ -24,7 +24,7 @@ wheels/
 .installed.cfg
 *.egg
 venv/
-
+readme.md/
 # APK files
 static/apk/
 *.apk
