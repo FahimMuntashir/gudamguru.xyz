@@ -1,0 +1,116 @@
+{% extends "base.html" %} {% block content %}
+<!-- Hero Section -->
+<div
+  class="hero-section position-relative overflow-hidden d-flex align-items-center"
+  style="min-height: 70vh"
+>
+  <div class="container position-relative z-2">
+    <div
+      class="row align-items-center justify-content-between flex-column-reverse flex-lg-row"
+    >
+      <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0">
+        <h1 class="display-3 fw-bold mb-3 animate-fadein">
+          Welcome to <span class="text-primary">Gudam Guru</span>
+        </h1>
+        <div class="slogan mb-4 animate-slidein">
+          <h2 class="text-gradient">Track. Sell. Grow.</h2>
+        </div>
+        <p class="lead mb-4 text-secondary">
+          Your Ultimate Inventory and Stock Management Solution for Store
+          Owners.
+        </p>
+        <a
+          href="/contact"
+          class="btn btn-primary btn-lg px-4 shadow animate-pop"
+          >Get Started</a
+        >
+      </div>
+      <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+        <img
+          src="{{ url_for('static', filename='img/gudam_guru.png') }}"
+          alt="App Screenshot"
+          class="hero-app-img shadow-lg rounded-4 border border-3 border-primary-subtle animate-float"
+          style="max-width: 600px; width: 100%"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="hero-bg position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section py-5 bg-light position-relative">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Why Choose Gudam Guru?</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div
+          class="feature-card card h-100 border-0 shadow-sm text-center p-4 animate-fadein"
+        >
+          <div
+            class="feature-icon mb-3 mx-auto bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 70px; height: 70px"
+          >
+            <i class="fas fa-chart-line fa-2x text-primary"></i>
+          </div>
+          <h4 class="fw-semibold mb-2">Track Inventory</h4>
+          <p class="text-secondary">
+            Monitor your stock levels in real-time and never run out of
+            products.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="feature-card card h-100 border-0 shadow-sm text-center p-4 animate-fadein"
+          style="animation-delay: 0.1s"
+        >
+          <div
+            class="feature-icon mb-3 mx-auto bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 70px; height: 70px"
+          >
+            <i class="fas fa-shopping-cart fa-2x text-success"></i>
+          </div>
+          <h4 class="fw-semibold mb-2">Sell Efficiently</h4>
+          <p class="text-secondary">
+            Streamline your sales process and manage transactions with ease.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="feature-card card h-100 border-0 shadow-sm text-center p-4 animate-fadein"
+          style="animation-delay: 0.2s"
+        >
+          <div
+            class="feature-icon mb-3 mx-auto bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 70px; height: 70px"
+          >
+            <i class="fas fa-chart-bar fa-2x text-warning"></i>
+          </div>
+          <h4 class="fw-semibold mb-2">Grow Business</h4>
+          <p class="text-secondary">
+            Make data-driven decisions and watch your business flourish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div
+  class="cta-section py-5 bg-primary text-white position-relative overflow-hidden"
+>
+  <div class="container text-center position-relative z-2">
+    <h2 class="mb-4 fw-bold">Ready to Transform Your Business?</h2>
+    <p class="lead mb-4">
+      Join the growing community of successful store managers using Gudam Guru.
+    </p>
+    <a href="/contact" class="btn btn-light btn-lg px-4 shadow"
+      >Get Started Now</a
+    >
+  </div>
+  <div class="cta-bg position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+</div>
+{% endblock %}

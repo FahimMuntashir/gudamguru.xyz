@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body p-5">
+          <h2 class="text-center mb-4">Download Gudam Guru</h2>
+
+          {% if code %}
+          <div class="text-center mb-4">
+            <div class="alert alert-success">
+              <h4 class="alert-heading">Code Verified!</h4>
+              <p>
+                Your download code has been verified. Click the button below to
+                download Gudam Guru.
+              </p>
+            </div>
+            <a
+              href="{{ url_for('static', filename='apk/gudamguru.apk') }}"
+              class="btn btn-primary btn-lg"
+            >
+              <i class="fas fa-download me-2"></i>Download APK
+            </a>
+          </div>
+          {% else %}
+          <p class="text-center text-muted mb-4">
+            Enter your download code to access the Gudam Guru APK file.
+          </p>
+
+          <form
+            method="POST"
+            action="{{ url_for('download') }}"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="mb-4">
+              <label for="code" class="form-label">Download Code</label>
+              <input
+                type="text"
+                class="form-control form-control-lg text-center"
+                id="code"
+                name="code"
+                required
+                pattern="[A-Fa-f0-9]{8}"
+                placeholder="Enter your 8-character code"
+              />
+              <div class="invalid-feedback">
+                Please enter a valid 8-character code.
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Verify Code
+              </button>
+            </div>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Form validation
+  (function () {
+    "use strict";
+    var forms = document.querySelectorAll(".needs-validation");
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
+{% endblock %}
